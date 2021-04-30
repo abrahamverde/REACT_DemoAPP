@@ -1,6 +1,6 @@
 # REACT DEMO APP
 
-This is a demo program to show you the basics components in a REACT application. In this app, you'll find the most common elements which we usually use in a frontend application, such as table, inputs, bootstrap modal, buttons, etc.
+This is a demo program where I used the basic components in a REACT application. In this app, you'll find the most common elements in a frontend application, such as table, inputs, bootstrap modal, buttons, etc.
 
 ## Dependencies
 
