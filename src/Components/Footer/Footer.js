@@ -6,7 +6,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className='col-md-12' id='mainFooter'>
-                Todos los derechos reservados.
+                Feel free to download and use it whenever and however you want.
             </div>
         )
     }

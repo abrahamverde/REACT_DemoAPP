@@ -57,7 +57,7 @@ export default class Dashboard extends Component {
                 <Modal show={this.state.modalShow}>
 
                     <Modal.Header closeButton>
-                        <Modal.Title>User Address</Modal.Title>
+                        <Modal.Title>User's Address</Modal.Title>
                     </Modal.Header>
                     
                     <Modal.Body className="modalMessage">
@@ -99,7 +99,7 @@ export default class Dashboard extends Component {
                     </div>
 
                     <div className='col-md-6' style={{"text-align" : "right" }}>
-                        <Button className='btn btn-success btn-sm'>Agregar Usuario</Button>
+                        <a href="addUser" className='btn btn-success btn-sm'>Add New User</a>
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@ export default class Dashboard extends Component {
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Website</th>
-                                <th>Acciones</th>
+                                <th>Actions</th>
                             </tr>
 
                         </thead>

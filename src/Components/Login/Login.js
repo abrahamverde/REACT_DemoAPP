@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./Login.css";
-import mainLogo from '../../Images/logo.png'
+import mainLogo from '../../Images/logo.jpg'
 
 
 

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Dashboard from './Components/Dashboard/Dashboard';
 import EditUser from './Components/EditUser/EditUser';
+import AddUser from './Components/AddUser/AddUser';
 
 
 
@@ -40,6 +41,9 @@ class App extends React.Component {
                 return <EditUser idUser={idUser}/>;
 
             }} />
+
+
+            <Route path="/addUser" component={AddUser} />
 
 
             <Route path="/" exact>

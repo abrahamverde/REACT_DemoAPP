@@ -1,36 +1,19 @@
 import React, { Component } from 'react'
-import "./EditUser.css"
-import { useParams } from "react-router-dom";
+
+import './AddUser.css'
+
+export default class AddUser extends Component {
 
 
+    state = {
 
-export default class EditUser extends Component {
-
-
-
-    componentDidMount() {
-
-        console.log("component");
-        let idUser = this.props.idUser;
-        
-        //FETCH AGAIN - JUST SELECTED USER
-        fetch('https://jsonplaceholder.typicode.com/users/' + idUser) //this.props.match.params.idUser)
-        .then(response => response.json())
-        .then(data =>  {
-
-            this.refs.name.value = data.name
-            this.refs.username.value = data.username;
-            this.refs.email.value = data.email;
-            this.refs.phone.value = data.phone;
-            this.refs.website.value = data.website;
-
-            }
-        );
+        userInformation : [],
         
     }
 
 
-    updateInformation = () => {
+    storeInformation = () => {
+
 
         let inputName = this.refs.name.value;
         let inputUsername = this.refs.username.value;
@@ -67,7 +50,7 @@ export default class EditUser extends Component {
         //REQUEST API VIA POST METHOD
         ///
         fetch('https://jsonplaceholder.typicode.com/users/', {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
@@ -86,13 +69,13 @@ export default class EditUser extends Component {
         });
 
 
-    } //END METHOD
 
+    } //END METHOD
+    
 
     render() {
-
         return (
-            <div className="col-md-12 mainDivEditUser">
+            <div className="col-md-12 mainDivAddUser">
 
                 <div className="row"> 
                     <div className="col-md-4">
@@ -102,8 +85,8 @@ export default class EditUser extends Component {
                         </a>
                     </div>
                     
-                    <div className="col-md-4 editTitle">
-                        Edit User Information
+                    <div className="col-md-4 addTitle">
+                        Add User Information
                     </div>
                 </div>
 
@@ -123,7 +106,7 @@ export default class EditUser extends Component {
 
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" ref="username"  class="form-control" placeholder="Enter username" />
+                            <input type="text" ref="username" class="form-control" placeholder="Enter username" />
                         </div>
 
                         <div class="form-group">
@@ -138,15 +121,15 @@ export default class EditUser extends Component {
 
                         <div class="form-group">
                             <label>Website</label>
-                            <input type="text" ref="website"  class="form-control" placeholder="Enter website" />
+                            <input type="text" ref="website" class="form-control" placeholder="Enter website" />
                         </div>
 
                         <hr />
-
-                        <span ref="waitMessage" className="d-none">Por Favor Espere... <i className="fas fa-spinner fa-spin"></i></span>
+            
+                        <span ref="waitMessage" className="d-none">Please Wait... <i className="fas fa-spinner fa-spin"></i></span>
 
                         <br/>
-                        <button type="submit" ref="sButton" onClick={this.updateInformation} class="btn btn-dark">Update Information</button>
+                        <button type="submit" ref="sButton" class="btn btn-dark" onClick={this.storeInformation} >Save Information</button>
 
 
                     </div>
@@ -155,8 +138,6 @@ export default class EditUser extends Component {
                 </div>
 
             </div>
-
-            
         )
     }
 }
